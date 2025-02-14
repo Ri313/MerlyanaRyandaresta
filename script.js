@@ -1,6 +1,7 @@
 // Pastikan musik diputar saat halaman dimuat atau setelah interaksi pertama
 window.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById('background-music');
+  const audio = document.getElementById('background-music').play();
+}, { once: true });
 
   // Coba putar otomatis saat halaman dimuat
   const playAudio = () => {
