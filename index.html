@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag Papers ❤️</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Notifikasi Musik */
+    #music-notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      display: flex;
+      align-items: center;
+    }
+    #music-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Animasi Vinyl Record */
+    #music-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      animation: spin 3s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Background -->
+  <audio id="background-music" loop>
+    <source src="Terakhir Kali.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Notifikasi Musik -->
+  <div id="music-notification">
+    <img id="music-icon" src="https://cdn.pixabay.com/photo/2019/03/09/02/12/vinyl-record-4043560_1280.png" alt="Music Icon">
+    <span>Now Playing: Terakhir Kali - Wijaya 80</span>
+  </div>
+
+  <!-- Tombol Reset -->
+  <button id="reset-button">Reset</button>
+
+  <div class="RedRose" id="redrose">
+    <img src="images/4.png" />
+  </div>
+
+  <div class="paper image" id="paper1">
+    <p> doaku, tetap apapun yang</p>
+    <p>terbaik buat kamu  </p>
+    <img src="images/7.jpg" />
+  </div>
+
+  <div class="paper image" id="paper2">
+    <p></p>
+    <img src="images/5.png" />
+  </div>
+
+  <div class="paper image" id="paper3">
+    <p>3,5 tahun </p>
+    <p> Dan kamu berhasil melaluinya ❤️ </p>
+    <img src="images/6.png" />
+  </div>
+
+  <div class="paper red" id="paper4">
+    <p class="p1"> gilakkk kamu keren bangetttss</p>
+    <p class="p2">anjay aku bangga banget ini mah 😍</p>
+  </div>
+
+  <div class="paper" id="paper5">
+    <p class="p1">SELAMATTTT </p>
+    <p class="p1">Merlyana Ryandaresta S.I.Kom <span style="color: red !important;">❤️</span></p>
+  </div>
+
+  <div class="paper" id="paper6">
+    <p class="p1">Pindahin kertas nya satu persatu!</p>
+  </div>
+
+  <!-- Script -->
+  <script src="./script.js"></script>
+  <script>
+    // Tampilkan notifikasi musik dengan animasi
+    window.addEventListener("load", function() {
+      const musicNotification = document.getElementById("music-notification");
+      setTimeout(() => {
+        musicNotification.classList.add("show");
+      }, 500);
+    });
+
+    // Tombol Reset
+    document.getElementById("reset-button").addEventListener("click", function() {
+      const elements = ["redrose", "paper1", "paper2", "paper3", "paper4", "paper5", "paper6"];
+      elements.forEach(id => {
+        const el = document.getElementById(id);
+        el.style.transform = "";
+        el.style.zIndex = "";
+      });
+    });
+  </script>
+</body>
+</html>
